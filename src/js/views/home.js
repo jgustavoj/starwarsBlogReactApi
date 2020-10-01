@@ -58,12 +58,12 @@ export class Home extends React.Component {
 	render() {
 		return (
 			<div>
-				{/* {this.characters.map((item, index) => {
+				{this.state.characters.map((item, index) => {
 					return <CharacterCard key={index} character={item} index={index} />;
 				})}
-				{this.planets.map((item, index) => {
+				{this.state.planets.map((item, index) => {
 					return <PlanetCard key={index} planet={item} index={index} />;
-				})} */}
+				})}
 			</div>
 		);
 	}
