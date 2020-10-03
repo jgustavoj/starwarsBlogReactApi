@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export class CharacterCard extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {};
 	}
 	render() {
@@ -17,7 +17,7 @@ export class CharacterCard extends React.Component {
 							<>
 								<img className="card-img-top" src="#" alt="Card image cap" />
 								<div className="card-body">
-									<h5 className="card-title">{this.props.name}</h5>
+									<h5 className="card-title">{this.props.character.name}</h5>
 									<p className="card-text">
 										Some quick example text to build on the card title and make up the bulk of the
 										cards content.
@@ -27,7 +27,7 @@ export class CharacterCard extends React.Component {
 											Details
 										</a>
 									</Link>
-									<button onClick={() => actions.addFavorite(this.props.name)}>
+									<button onClick={() => actions.addFavorite(this.props.character.name)}>
 										<i className="far fa-heart" />
 									</button>
 								</div>
@@ -41,6 +41,6 @@ export class CharacterCard extends React.Component {
 }
 
 CharacterCard.propTypes = {
-	name: PropTypes.string,
+	character: PropTypes.object,
 	index: PropTypes.number
 };

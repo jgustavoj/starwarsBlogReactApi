@@ -15,7 +15,7 @@ export const Navbar = () => {
 			<div className="ml-auto">
 				{/* //setIsOpen is passing a callback function !isOpen so it can perform the opposite of its current state  */}
 				<button className="btn btn-primary" onClick={() => setIsOpen(!isOpen)}>
-					Favorites
+					Favorites <span className="badge badge-secondary">{store.favorites.length}</span>
 				</button>
 
 				{/* //ternary condition (if dropdown is open then d-block if not d-none) */}
