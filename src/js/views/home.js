@@ -3,6 +3,7 @@ import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import { CharacterCard } from "../component/characterCard";
 import { PlanetCard } from "../component/planetCard";
+import { StarshipCard } from "../component/starshipCard";
 
 export class Home extends React.Component {
 	constructor() {
@@ -54,6 +55,14 @@ export class Home extends React.Component {
 								<div className="d-flex justify-content-between overflow-auto">
 									{store.planets.map((item, index) => {
 										return <PlanetCard key={index} planet={item} index={index} />;
+									})}
+								</div>
+								<div className="text-primary">
+									<h2>Starships</h2>
+								</div>
+								<div className="d-flex justify-content-between overflow-auto">
+									{store.starships.map((item, index) => {
+										return <StarshipCard key={index} starship={item} index={index} />;
 									})}
 								</div>
 							</div>

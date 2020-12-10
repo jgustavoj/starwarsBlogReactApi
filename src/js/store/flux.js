@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			favorites: [],
 			characters: [],
-			planets: []
+			planets: [],
+			starships: []
 			//array of objects or items with hardcoded information from swapi
 		},
 		actions: {
@@ -58,6 +59,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 						// Do stuff with the JSON
 						console.log("responseAsJson", responseAsJson);
 						setStore({ planets: responseAsJson.results });
+					})
+					.catch(function(error) {
+						console.log("Looks like there was a problem: \n", error);
+					});
+			},
+			loadStarships: () => {
+				fetch("https://swapi.dev/api/starships/")
+					.then(function(response) {
+						if (!response.ok) {
+							throw Error(response.statusText);
+						}
+						// Read the response as json.
+						return response.json();
+					})
+					.then(function(responseAsJson) {
+						// Do stuff with the JSON
+						console.log("responseAsJson", responseAsJson);
+						setStore({ starships: responseAsJson.results });
 					})
 					.catch(function(error) {
 						console.log("Looks like there was a problem: \n", error);
