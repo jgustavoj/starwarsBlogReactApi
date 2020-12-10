@@ -31,7 +31,21 @@ export const Details = props => {
 	return (
 		<>
 			<div className="top-container">
-				<p>{character.name}</p>
+				<p>
+					Name {""} {character.name}
+				</p>
+				<p>
+					Height {""}
+					{character.height}
+				</p>
+				<p>
+					Mass {""}
+					{character.mass}
+				</p>
+				<p>
+					Hair Color {""}
+					{character.hair_color}
+				</p>
 				<div className="image" />
 				<div className="image description" />
 			</div>
