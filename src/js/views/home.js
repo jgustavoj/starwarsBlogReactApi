@@ -35,22 +35,26 @@ export class Home extends React.Component {
 	}
 	render() {
 		return (
-			<div>
-				<Context.Consumer>
-					{({ actions, store }) => {
-						return (
-							<>
-								{store.characters.map((item, index) => {
-									return <CharacterCard key={index} character={item} index={index} />;
-								})}
-								{store.planets.map((item, index) => {
-									return <PlanetCard key={index} planet={item} index={index} />;
-								})}
-							</>
-						);
-					}}
-				</Context.Consumer>
-			</div>
+			<Context.Consumer>
+				{({ actions, store }) => {
+					return (
+						<>
+							<div className="text-center container mt-5">
+								<div className="d-flex justify-content-between overflow-auto">
+									{store.characters.map((item, index) => {
+										return <CharacterCard key={index} character={item} index={index} />;
+									})}
+								</div>
+								<div className="d-flex justify-content-between overflow-auto">
+									{store.planets.map((item, index) => {
+										return <PlanetCard key={index} planet={item} index={index} />;
+									})}
+								</div>
+							</div>
+						</>
+					);
+				}}
+			</Context.Consumer>
 		);
 	}
 }
