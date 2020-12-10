@@ -22,10 +22,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				newStore.favorites.push(name);
 				setStore({ newStore });
 			},
-
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
 			loadCharacters: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
