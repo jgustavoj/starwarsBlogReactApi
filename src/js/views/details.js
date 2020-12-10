@@ -30,7 +30,7 @@ export const Details = props => {
 
 	return (
 		<>
-			<div className="top-container">
+			<div className="jumbotron">
 				<p>
 					Name {""} {character.name}
 				</p>

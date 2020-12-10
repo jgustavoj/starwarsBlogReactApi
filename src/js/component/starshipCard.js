@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import ship from "../../img/ship.jpg";
 
 export class StarshipCard extends React.Component {
 	constructor(props) {
@@ -15,7 +16,7 @@ export class StarshipCard extends React.Component {
 					return (
 						<>
 							<div className="card ml-3 mr-3" style={{ minWidth: "18rem" }}>
-								<img className="card-img-top" src="#" alt="Card image cap" />
+								<img className="card-img-top" src={ship} />
 								<div className="card-body">
 									<h5 className="card-title">{this.props.starship.name}</h5>
 									<p className="card-text">
