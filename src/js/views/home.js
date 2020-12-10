@@ -40,10 +40,16 @@ export class Home extends React.Component {
 					return (
 						<>
 							<div className="text-center container mt-5">
-								<div className="d-flex justify-content-between overflow-auto">
+								<div className="text-primary">
+									<h2>Character</h2>
+								</div>
+								<div className="d-flex justify-content-start overflow-auto ">
 									{store.characters.map((item, index) => {
 										return <CharacterCard key={index} character={item} index={index} />;
 									})}
+								</div>
+								<div className="text-primary">
+									<h2>Planets</h2>
 								</div>
 								<div className="d-flex justify-content-between overflow-auto">
 									{store.planets.map((item, index) => {
